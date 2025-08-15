@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
+using Soenneker.Attributes.PublicOpenApiObject;
 
 namespace Soenneker.Dtos.IdNameValue;
 
@@ -7,6 +8,7 @@ namespace Soenneker.Dtos.IdNameValue;
 /// A minimal Record type with an Id (string), Name (string), nullable Value (string?) and maximum JSON compatibility
 /// </summary>
 /// <remarks>Record type, so avoid modification after initial construction.</remarks>
+[PublicOpenApiObject]
 public record IdNameValue : IdNamePair.IdNamePair
 {
     [JsonPropertyName("value")]
