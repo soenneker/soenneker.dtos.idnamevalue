@@ -11,6 +11,9 @@ namespace Soenneker.Dtos.IdNameValue;
 [PublicOpenApiObject]
 public record IdNameValue : IdNamePair.IdNamePair
 {
+    /// <summary>
+    /// The optional value associated with the identifier and name.
+    /// </summary>
     [JsonPropertyName("value")]
     [JsonProperty("value")]
     public string? Value { get; set; }
