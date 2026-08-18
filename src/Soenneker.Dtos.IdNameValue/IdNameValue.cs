@@ -5,14 +5,13 @@ using Soenneker.Attributes.PublicOpenApiObject;
 namespace Soenneker.Dtos.IdNameValue;
 
 /// <summary>
-/// A minimal Record type with an Id (string), Name (string), nullable Value (string?) and maximum JSON compatibility
+/// Extends an identifier-and-name resource reference with an optional string value used for display or selection metadata.
 /// </summary>
-/// <remarks>Record type, so avoid modification after initial construction.</remarks>
 [PublicOpenApiObject]
 public record IdNameValue : IdNamePair.IdNamePair
 {
     /// <summary>
-    /// The optional value associated with the identifier and name.
+    /// Optional machine-readable or display value associated with the referenced resource.
     /// </summary>
     [JsonPropertyName("value")]
     [JsonProperty("value")]
