@@ -3,11 +3,22 @@
 [![](https://img.shields.io/nuget/dt/soenneker.dtos.idnamevalue.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.dtos.idnamevalue/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.dtos.idnamevalue/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.dtos.idnamevalue/actions/workflows/codeql.yml)
 
-# ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Dtos.IdNameValue
-### A minimal Record type with an Id (string), Name (string), Value (string) and maximum JSON compatibility
+# Soenneker.Dtos.IdNameValue
 
-## Installation
+Extends an identifier-and-name resource reference with an optional string value used for display or selection metadata.
 
-```
+## Install
+
+```bash
 dotnet add package Soenneker.Dtos.IdNameValue
 ```
+
+## What you get
+
+- `IdNameValue` — Extends an identifier-and-name resource reference with an optional string value used for display or selection metadata.
+
+## API at a glance
+
+| API | What it does | Result / important behavior |
+| --- | --- | --- |
+| `IdNameValue.Value` | Optional machine-readable or display value associated with the referenced resource. | Optional machine-readable or display value associated with the referenced resource. |
