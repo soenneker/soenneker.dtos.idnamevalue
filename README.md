@@ -5,20 +5,37 @@
 
 # Soenneker.Dtos.IdNameValue
 
-Extends an identifier-and-name resource reference with an optional string value used for display or selection metadata.
+Extends an ID/name resource reference with an optional string value.
 
-## Install
+## Installation
 
 ```bash
 dotnet add package Soenneker.Dtos.IdNameValue
 ```
 
-## What you get
+## Usage
 
-- `IdNameValue` — Extends an identifier-and-name resource reference with an optional string value used for display or selection metadata.
+```csharp
+using Soenneker.Dtos.IdNameValue;
 
-## API at a glance
+var option = new IdNameValue
+{
+    Id = "priority-high",
+    Name = "High priority",
+    Value = "high"
+};
+```
 
-| API | What it does | Result / important behavior |
-| --- | --- | --- |
-| `IdNameValue.Value` | Optional machine-readable or display value associated with the referenced resource. | Optional machine-readable or display value associated with the referenced resource. |
+Both System.Text.Json and Newtonsoft.Json serialize the inherited `id` and `name` fields plus `value`:
+
+```json
+{
+  "id": "priority-high",
+  "name": "High priority",
+  "value": "high"
+}
+```
+
+`Id` and `Name` are required during normal C# construction; `Value` is optional. The package does not define whether `Value` is a machine key, display text, external code, or nullable sentinel—the consuming API owns that meaning and validation.
+
+Record equality and hash codes include all three properties. They are mutable, so do not modify an instance while it is used as a dictionary key or stored in a hash set. Use a `with` expression to create changed copies when stable value semantics matter.
