@@ -26,7 +26,7 @@ var option = new IdNameValue
 };
 ```
 
-Both System.Text.Json and Newtonsoft.Json serialize the inherited `id` and `name` fields plus `value`:
+System.Text.Json serializes the inherited `id` and `name` fields plus `value`:
 
 ```json
 {
